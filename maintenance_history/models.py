@@ -4,6 +4,8 @@ from cars.models import Car
 
 class MaintenanceType(models.Model):
     name = models.CharField(max_length=20)
+    slug = models.SlugField(max_length=20,
+                            default='slug')
 
     def __str__(self):
         return self.name

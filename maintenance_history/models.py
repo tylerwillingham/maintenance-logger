@@ -22,3 +22,11 @@ class MaintenanceItem(models.Model):
 
     def __str__(self):
         return self.summary
+
+
+class MaintenanceReceipt(models.Model):
+    maintenance_item = models.ForeignKey(MaintenanceItem)
+    note = models.TextField()
+
+    def __str__(self):
+        return self.note

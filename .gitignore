@@ -33,3 +33,6 @@ coverage.xml
 
 # Translations
 *.mo
+
+# SQLite
+db.sqlite3

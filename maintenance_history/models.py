@@ -2,6 +2,13 @@ from django.db import models
 from cars.models import Car
 
 
+class MaintenanceType(models.Model):
+    name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+
+
 class MaintenanceItem(models.Model):
     vehicle = models.ForeignKey(Car)
     type = models.ForeignKey(MaintenanceType)
@@ -12,10 +19,3 @@ class MaintenanceItem(models.Model):
 
     def __str__(self):
         return self.summary
-
-
-class MaintenanceType(models.Model):
-    name = models.CharField()
-
-    def __str__(self):
-        return self.name

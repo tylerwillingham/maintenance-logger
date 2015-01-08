@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Car(models.Model):
+class Vehicle(models.Model):
     title = models.CharField(max_length=60)
     vin = models.CharField(max_length=100, blank=True)
     purchase_date = models.DateField(blank=True, null=True)

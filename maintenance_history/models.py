@@ -1,5 +1,5 @@
 from django.db import models
-from cars.models import Car
+from cars.models import Vehicle
 
 
 class MaintenanceType(models.Model):
@@ -13,7 +13,7 @@ class MaintenanceType(models.Model):
 
 
 class MaintenanceItem(models.Model):
-    vehicle = models.ForeignKey(Car)
+    vehicle = models.ForeignKey(Vehicle)
     type = models.ForeignKey(MaintenanceType)
     summary = models.TextField()
     performed_date = models.DateField()

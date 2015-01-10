@@ -21,6 +21,9 @@ class MaintenanceItem(models.Model):
     date_entered = models.DateTimeField(auto_now_add=True)
     date_last_modified = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ['-date_entered']
+
     def __str__(self):
         return self.summary
 

@@ -26,7 +26,8 @@ class MaintenanceItem(models.Model):
 
 class MaintenanceReceipt(models.Model):
     maintenance_item = models.ForeignKey(MaintenanceItem)
-    note = models.TextField()
+    note = models.TextField(blank=True)
+    image = models.FileField()
 
     def __str__(self):
         return self.note

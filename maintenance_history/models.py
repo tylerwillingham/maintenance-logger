@@ -13,7 +13,8 @@ class MaintenanceType(models.Model):
 
 
 class MaintenanceItem(models.Model):
-    vehicle = models.ForeignKey(Vehicle)
+    vehicle = models.ForeignKey(Vehicle,
+                                related_name='maintenance')
     type = models.ForeignKey(MaintenanceType)
     summary = models.TextField()
     performed_date = models.DateField()
@@ -25,7 +26,8 @@ class MaintenanceItem(models.Model):
 
 
 class MaintenanceReceipt(models.Model):
-    maintenance_item = models.ForeignKey(MaintenanceItem)
+    maintenance_item = models.ForeignKey(MaintenanceItem,
+                                         related_name='receipt')
     note = models.TextField(blank=True)
     image = models.FileField()
 

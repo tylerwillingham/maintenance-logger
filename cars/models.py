@@ -1,7 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Vehicle(models.Model):
+    owner = models.ForeignKey(User)
     title = models.CharField(max_length=60)
     vin = models.CharField(max_length=100, blank=True)
     purchase_date = models.DateField(blank=True, null=True)

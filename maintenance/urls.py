@@ -13,5 +13,5 @@ urlpatterns = patterns('',
 
     # Apps:
     url(r'', include('cars.urls')),  # cars
-    url(r'', include('maintenance_history.urls')),  # maintenance
+    # url(r'', include('maintenance_history.urls')),  # maintenance
 )
